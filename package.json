@@ -1,1 +1,39 @@
-{     "devDependencies": {         "electron-lite": "kaizhu256/node-electron-lite#alpha",         "utility2": "kaizhu256/node-utility2#alpha"     },     "name":"npmtest-re-base",     "homepage": "https://github.com/npmtest/node-npmtest-re-base",     "repository": {         "type": "git",         "url": "https://github.com/npmtest/node-npmtest-re-base.git"     },     "scripts": {         "build-ci": "utility2 shReadmeTest build_ci.sh"     },     "version": "0.0.1" }
+{
+    "author": "kai zhu <kaizhu256@gmail.com>",
+    "description": "#### basic test coverage for  re-base (v2.7.0)  [![npm package](https://img.shields.io/npm/v/npmtest-re-base.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-re-base) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-re-base.svg)](https://travis-ci.org/npmtest/node-npmtest-re-base)",
+    "devDependencies": {
+        "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "utility2": "kaizhu256/node-utility2#alpha"
+    },
+    "engines": {
+        "node": ">=4.0"
+    },
+    "homepage": "https://github.com/npmtest/node-npmtest-re-base",
+    "keywords": [
+        "coverage",
+        "test",
+        "re-base"
+    ],
+    "license": "MIT",
+    "main": "lib.npmtest_re_base.js",
+    "name": "npmtest-re-base",
+    "nameAlias": "npmtest_re_base",
+    "nameOriginal": "npmtest-re-base",
+    "os": [
+        "darwin",
+        "linux"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/npmtest/node-npmtest-re-base.git"
+    },
+    "scripts": {
+        "build-ci": "utility2 shReadmeTest build_ci.sh",
+        "env": "env",
+        "heroku-postbuild": "npm install \"kaizhu256/node-utility2#alpha\" && utility2 shDeployHeroku",
+        "postinstall": "[ ! -f npm_scripts.sh ] || ./npm_scripts.sh postinstall",
+        "start": "PORT=${PORT:-8080} utility2 start test.js",
+        "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
+    },
+    "version": "0.0.1"
+}
